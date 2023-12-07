@@ -14,6 +14,8 @@ dependencies {
     implementation("org.seleniumhq.selenium:selenium-java:4.15.0")
     testImplementation("org.testng:testng:7.8.0")
     implementation("org.slf4j:slf4j-api:2.0.9")
+    testImplementation("ch.qos.logback:logback-classic:1.4.14")
+
 
 }
 

@@ -21,7 +21,7 @@ public class BasePage {
     }
 
     public WebElement waitDisplayElement(WebElement element) {
-        new WebDriverWait(driver, Duration.ofSeconds(5))
+        new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOf(element));
         return element;
     }
@@ -30,5 +30,6 @@ public class BasePage {
         driver.switchTo().activeElement();
         return this;
     }
+
 
 }

@@ -17,10 +17,6 @@ public class LoginPage extends BasePage {
     private final By passwordInput = By.xpath("//input[@id='password']");
     private final By signInButton = By.xpath("//button[contains(text(),'Войти')]");
 
-    public LoginPage emailInputClick() {
-        driver.findElement(emailInput).click();
-        return this;
-    }
 
     public LoginPage enterLogin() {
         WebElement email = driver.findElement(emailInput);

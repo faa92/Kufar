@@ -8,8 +8,7 @@ public class CookieWindow extends BasePage {
         super(driver);
     }
 
-    private final By cookieOk = By.xpath(
-            "//button[@class='styles_button__oKUgO styles_secondary__MiBIC styles_size-m__NgAcw styles_submit_button__T_qS1']");
+    private final By cookieOk = By.xpath("//button[@class='styles_button__oKUgO styles_secondary__MiBIC styles_size-m__NgAcw styles_submit_button__T_qS1']");
 
     public void cookieClickOk() {
         driver.findElement(cookieOk).click();

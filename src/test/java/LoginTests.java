@@ -17,13 +17,14 @@ public class LoginTests extends BaseTest {
         log.info(" cookie OK");
 
         log.info("start WAIT");
-        mainHeader.clickButtonAfterAdDisappears();
+        advertisingWindow.waitingForAdvertisement();
         log.info("END WAIT");
+
+        mainHeader.clickToButtonSignIn();
         log.info("click button sign in");
 
         loginPage.enterLogin().enterPassword();
-
-        log.info("click sign in 2");
+        log.info("click sign up");
 
     }
 }

@@ -12,14 +12,11 @@ public class AdvertisingWindow extends BasePage {
         super(driver);
     }
 
-    private final By banner = By.xpath("//div[@id='container-banner-fullscreen']");
-//a[@id='banner' and contains(@class, 'banner')]
+    private final By banner = By.id("container-banner-fullscreen");
 
-
-    public void waitForBannerToDisappear() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(11));
-        wait.until(ExpectedConditions.presenceOfElementLocated(banner));
+    public void waitingForAdvertisement() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(banner));
     }
-
 
 }

@@ -18,7 +18,6 @@ public class DriverManager {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return driver;
     }
-
     public static synchronized void closeWebDriver() {
         if (driver != null) {
             driver.quit();

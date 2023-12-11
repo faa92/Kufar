@@ -15,27 +15,29 @@ public class LoginPage extends BasePage {
 
     private final By emailInput = By.xpath("//input[@id='login']");
     private final By passwordInput = By.xpath("//input[@id='password']");
-    private final By signInButton = By.xpath("//button[@class='styles_button__oKUgO styles_default__ws8JN styles_size-m__NgAcw styles_with_icon__r87Pw']");
+    private final By signInButton = By.xpath("//button[contains(text(),'Войти')]");
 
     public LoginPage emailInputClick() {
         driver.findElement(emailInput).click();
         return this;
     }
 
-    public LoginPage enterLoginAndGoPassword() {
+    public LoginPage enterLogin() {
         WebElement email = driver.findElement(emailInput);
-        email.sendKeys(EMAIL, Keys.TAB);
+        email.sendKeys(EMAIL);
         return this;
     }
 
-    public LoginPage enterPasswordAndSignIn() {
+    public LoginPage enterPassword() {
         WebElement password = driver.findElement(passwordInput);
         password.sendKeys(PASSWORD, Keys.ENTER);
         return this;
     }
 
-    public void waitAdvertising() {
-
+    public LoginPage clickButtonSignIn() {        //todo
+        WebElement button = driver.findElement(signInButton);
+        button.click();
+        return this;
     }
 
 }

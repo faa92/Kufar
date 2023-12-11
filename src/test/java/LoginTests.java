@@ -7,19 +7,23 @@ import static org.example.Constants.HOME_URL;
 public class LoginTests extends BaseTest {
     private static final Logger log = LoggerFactory.getLogger(LoginTests.class);
 
-
-    @Test
-    public void clickButtonSignIn() {
-        log.info("Start!");
-        basePage.openUrl(HOME_URL);
-        cookieWindow.cookieClickOk();
-
-    }
-
     @Test
     public void login() {
-        mainHeader.clickToButtonSignIn();
-        mainHeader.switchToActiveElement();
-        loginPage.emailInputClick().enterLoginAndGoPassword().enterPasswordAndSignIn();
+        log.info("Start!!!");
+        basePage.openUrl(HOME_URL);
+        log.info("open url");
+
+        cookieWindow.cookieClickOk();
+        log.info(" cookie OK");
+
+        log.info("start WAIT");
+        mainHeader.clickButtonAfterAdDisappears();
+        log.info("END WAIT");
+        log.info("click button sign in");
+
+        loginPage.enterLogin().enterPassword();
+
+        log.info("click sign in 2");
+
     }
 }

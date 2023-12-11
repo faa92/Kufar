@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import org.example.util.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,26 +10,25 @@ import java.time.Duration;
 
 public class BasePage {
     protected WebDriver driver;
-    protected WebDriverWait wait;
 
     public BasePage(WebDriver driver) {
+        driver = DriverManager.getDriver();
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     public void openUrl(String url) {
         driver.get(url);
     }
 
-    public WebElement waitDisplayElement(WebElement element) {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.visibilityOf(element));
-        return element;
-    }
-
     public BasePage switchToActiveElement() {
         driver.switchTo().activeElement();
         return this;
+    }
+
+    public void waitExplicitly(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.visibilityOf(element));
+
     }
 
 

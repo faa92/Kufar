@@ -11,10 +11,5 @@ public class BaseTest {
     protected MailingWindow mailingWindow = new MailingWindow(driver);
     protected AdvertisingWindow advertisingWindow = new AdvertisingWindow(driver);
 
-//@AfterSuite (alwaysRun = true)
-//    public void quitDriver() {
-//        driver.quit();
-//    }
-
 
 }

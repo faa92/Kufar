@@ -14,7 +14,7 @@ public class LoginTests extends BaseTest {
         log.info("open url");
 
         cookieWindow.cookieClickOk();
-        log.info(" cookie OK");
+        log.info("cookie OK");
 
         log.info("start WAIT");
         advertisingWindow.waitingForAdvertisement();
@@ -23,8 +23,9 @@ public class LoginTests extends BaseTest {
         mainHeader.clickToButtonSignIn();
         log.info("click button sign in");
 
-        loginPage.enterLogin().enterPassword();
-        log.info("click sign up");
+        loginPage.enterLogin().enterPassword().clickButtonSignIn();
+        log.info("sign in");
 
+        mainHeader.clickPersonalIcon();
     }
 }

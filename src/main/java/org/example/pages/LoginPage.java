@@ -15,7 +15,9 @@ public class LoginPage extends BasePage {
 
     private final By emailInput = By.xpath("//input[@id='login']");
     private final By passwordInput = By.xpath("//input[@id='password']");
-    private final By signInButton = By.xpath("//button[contains(text(),'Войти')]");
+    private final By signInButton = By.xpath("//button[@type='submit'][contains(text(),'Войти')]");
+
+    ////button[contains(text(),'Войти')]
 
 
     public LoginPage enterLogin() {
@@ -26,11 +28,11 @@ public class LoginPage extends BasePage {
 
     public LoginPage enterPassword() {
         WebElement password = driver.findElement(passwordInput);
-        password.sendKeys(PASSWORD, Keys.ENTER);
+        password.sendKeys(PASSWORD);
         return this;
     }
 
-    public LoginPage clickButtonSignIn() {        //todo
+    public LoginPage clickButtonSignIn() {
         WebElement button = driver.findElement(signInButton);
         button.click();
         return this;

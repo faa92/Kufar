@@ -11,14 +11,11 @@ public class MainHeader extends BasePage {
         super(driver);
     }
 
-    public MainHeader clickToButtonSignIn() {
-        driver.findElement(signInButton).click();
-        return this;
+    public By getSignInButton() {
+        return signInButton;
     }
 
-    public void clickPersonalIcon() {
-        driver.findElement(personalAccountIcon).click();
+    public By getPersonalAccountIcon() {
+        return personalAccountIcon;
     }
-
-
 }

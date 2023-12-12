@@ -1,14 +1,17 @@
 import org.example.pages.*;
+import org.example.service.AdvertisingWindowService;
+import org.example.service.CookieWindowService;
+import org.example.service.LoginPageService;
+import org.example.service.MainHeaderService;
 import org.example.util.DriverManager;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
-public class BaseTest {
+public abstract class BaseTest {
     protected WebDriver driver = DriverManager.getDriver();
-    protected BasePage basePage = new BasePage(driver);
-    protected MainHeader mainHeader = new MainHeader(driver);
-    protected LoginPage loginPage = new LoginPage(driver);
-    protected CookieWindow cookieWindow = new CookieWindow(driver);
-    protected AdvertisingWindow advertisingWindow = new AdvertisingWindow(driver);
-
+    protected MainHeaderService mainHeaderService = new MainHeaderService();
+    protected LoginPageService loginPageService = new LoginPageService();
+    protected CookieWindowService cookieWindowService = new CookieWindowService();
+    protected AdvertisingWindowService advertisingWindowService = new AdvertisingWindowService();
 
 }

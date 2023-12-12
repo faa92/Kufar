@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class BasePage {
+public abstract class BasePage {
     protected WebDriver driver;
 
     public BasePage(WebDriver driver) {
@@ -16,9 +16,6 @@ public class BasePage {
         this.driver = driver;
     }
 
-    public void openUrl(String url) {
-        driver.get(url);
-    }
 
     public BasePage switchToActiveElement() {
         driver.switchTo().activeElement();

@@ -11,12 +11,9 @@ public class AdvertisingWindow extends BasePage {
     public AdvertisingWindow(WebDriver driver) {
         super(driver);
     }
-
     private final By banner = By.id("container-banner-fullscreen");
 
-    public void waitingForAdvertisement() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(banner));
+    public By getBanner() {
+        return banner;
     }
-
 }

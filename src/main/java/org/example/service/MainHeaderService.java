@@ -10,7 +10,7 @@ public class MainHeaderService {
     private final MainHeader mainHeader;
     public MainHeaderService() {
         this.driver = DriverManager.getDriver();
-        this.mainHeader = new MainHeader(driver);
+        this.mainHeader = new MainHeader();
     }
 
     public MainHeaderService  clickToButtonSignIn() {

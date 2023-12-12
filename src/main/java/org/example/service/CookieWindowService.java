@@ -9,7 +9,7 @@ public class CookieWindowService {
     private CookieWindow cookieWindow;
     public CookieWindowService() {
         this.driver = DriverManager.getDriver();
-        this.cookieWindow = new CookieWindow(driver);
+        this.cookieWindow = new CookieWindow();
     }
 
     public CookieWindowService cookieClickOk() {

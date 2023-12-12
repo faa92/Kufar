@@ -14,7 +14,7 @@ public class AdvertisingWindowService {
 
     public AdvertisingWindowService() {
         this.driver = DriverManager.getDriver();
-        this.advertisingWindow = new AdvertisingWindow(driver);
+        this.advertisingWindow = new AdvertisingWindow();
     }
 
     public AdvertisingWindowService waitingForAdvertisement() {

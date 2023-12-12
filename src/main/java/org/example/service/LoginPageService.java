@@ -13,7 +13,7 @@ public class LoginPageService {
    private LoginPage loginPage;
     public LoginPageService() {
         this.driver = DriverManager.getDriver();
-        this.loginPage = new LoginPage(driver);
+        this.loginPage = new LoginPage();
     }
 
     public LoginPageService enterLogin() {

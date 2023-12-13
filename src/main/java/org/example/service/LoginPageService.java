@@ -8,26 +8,28 @@ import org.openqa.selenium.WebElement;
 import static org.example.Constants.EMAIL;
 import static org.example.Constants.PASSWORD;
 
-public class LoginPageService {
-   private WebDriver driver;
+public class LoginPageService extends BaseService{
    private LoginPage loginPage;
     public LoginPageService() {
-        this.driver = DriverManager.getDriver();
+        super(LoginPageService.class);
         this.loginPage = new LoginPage();
     }
 
     public LoginPageService enterLogin() {
-        driver.findElement(loginPage.getEmailInput()).sendKeys(EMAIL);
+        logger.info("Enter login");
+        loginPage.getEmailInput().sendKeys(EMAIL);
         return this;
     }
 
     public LoginPageService enterPassword() {
-        driver.findElement(loginPage.getPasswordInput()).sendKeys(PASSWORD);
+        logger.info("Enter password");
+        loginPage.getPasswordInput().sendKeys(PASSWORD);
         return this;
     }
 
     public LoginPageService clickButtonSignIn() {
-        driver.findElement(loginPage.getSignInButton()).click();
+        logger.info("Click sign in");
+        loginPage.getSignInButton().click();
         return this;
     }
 }

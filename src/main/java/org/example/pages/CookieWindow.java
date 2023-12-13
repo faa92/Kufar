@@ -2,11 +2,12 @@ package org.example.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class CookieWindow extends BasePage {
-    private final By cookieOkButton = By.xpath("//button[@class='styles_button__oKUgO styles_secondary__MiBIC styles_size-m__NgAcw styles_submit_button__T_qS1']");
+    private final By cookieOkButton = By.xpath("//button[contains(text(), 'Принять')]");
 
-    public By getCookieOkButton() {
-        return cookieOkButton;
+    public WebElement getCookieOkButton() {
+        return driver.findElement(cookieOkButton);
     }
 }

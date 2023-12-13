@@ -3,28 +3,29 @@ package org.example.service;
 import org.example.pages.MainHeader;
 import org.example.util.DriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 
-public class MainHeaderService {
-    private final WebDriver driver;
+public class MainHeaderService extends BaseService {
     private final MainHeader mainHeader;
     public MainHeaderService() {
-        this.driver = DriverManager.getDriver();
+        super(MainHeaderService.class);
         this.mainHeader = new MainHeader();
     }
 
     public MainHeaderService  clickToButtonSignIn() {
-        driver.findElement(mainHeader.getSignInButton()).click();
+        logger.info("Click button sign in");
+        mainHeader.getSignInButton().click();
         return this;
     }
 
-    public MainHeaderService clickPersonalIcon() {
-        driver.findElement(mainHeader.getPersonalAccountIcon()).click();
-        return this;
-    }
-
-    public boolean isLoggedIn() {
-       return driver.findElement(mainHeader.getPersonalAccountIcon()).isDisplayed();
+    public void loginVerification() {
+        List<WebElement> icons= driver.findElements(mainHeader.getPersonalAccountIconSelector());
+        if (!icons.isEmpty()) {
+            logger.info("User is logged in");
+        } else logger.info("User is NOT logged in");
     }
 
 }

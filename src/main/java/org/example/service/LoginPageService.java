@@ -5,8 +5,7 @@ import org.example.util.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static org.example.Constants.EMAIL;
-import static org.example.Constants.PASSWORD;
+
 
 public class LoginPageService extends BaseService{
    private LoginPage loginPage;
@@ -17,13 +16,13 @@ public class LoginPageService extends BaseService{
 
     public LoginPageService enterLogin() {
         logger.info("Enter login");
-        loginPage.getEmailInput().sendKeys(EMAIL);
+        loginPage.getEmailInput().sendKeys(System.getenv("LOGIN_EMAIL"));
         return this;
     }
 
     public LoginPageService enterPassword() {
         logger.info("Enter password");
-        loginPage.getPasswordInput().sendKeys(PASSWORD);
+        loginPage.getPasswordInput().sendKeys(System.getenv("LOGIN_PASSWORD"));
         return this;
     }
 

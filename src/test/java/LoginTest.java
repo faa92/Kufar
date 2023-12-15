@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.example.Constants.HOME_URL;
 
 public class LoginTest extends BaseTest {
 

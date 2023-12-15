@@ -7,10 +7,8 @@ import org.openqa.selenium.WebElement;
 public class AdvertisingWindow extends BasePage {
     private final By banner = By.id("container-banner-fullscreen");
 
-    public WebElement getBannerElement() {
+    public WebElement getBanner() {
         return driver.findElement(banner);
     }
-    public By getBannerSelector() {
-        return banner;
-    }
+
 }

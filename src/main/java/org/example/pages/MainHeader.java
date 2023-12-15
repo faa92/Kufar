@@ -16,7 +16,5 @@ public class MainHeader extends BasePage {
     public WebElement getPersonalAccountIcon() {
         return driver.findElement(personalAccountIcon);
     }
-    public By getPersonalAccountIconSelector() {
-        return personalAccountIcon;
-    }
+
 }

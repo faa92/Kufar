@@ -22,8 +22,7 @@ public class MainHeaderService extends BaseService {
     }
 
     public void loginVerification() {
-        List<WebElement> icons= driver.findElements(mainHeader.getPersonalAccountIconSelector());
-        if (!icons.isEmpty()) {
+        if (mainHeader.getPersonalAccountIcon().isDisplayed()) {
             logger.info("User is logged in");
         } else logger.info("User is NOT logged in");
     }

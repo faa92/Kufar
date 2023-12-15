@@ -8,20 +8,24 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class AdvertisingWindowService extends BaseService {
-    private AdvertisingWindow advertisingWindow;
+    private final AdvertisingWindow advertisingWindow;
 
     public AdvertisingWindowService() {
         super(AdvertisingWindowService.class);
         this.advertisingWindow = new AdvertisingWindow();
     }
 
-    public AdvertisingWindowService waitingForAdvertisement() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+    public void waitingForAdvertisement() {
         logger.info("Start wait");
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(advertisingWindow.getBannerSelector()));
+        try {
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         logger.info("End wait");
-        return this;
     }
+
 }

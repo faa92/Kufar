@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public abstract class BaseService {
-    protected WebDriver driver = DriverManager.getDriver();
     protected   final Logger logger;
 
     public BaseService(Class<?> clazz) {

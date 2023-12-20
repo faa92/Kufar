@@ -2,16 +2,8 @@ import org.example.service.AdvertisingWindowService;
 import org.example.service.CookieWindowService;
 import org.example.service.LoginPageService;
 import org.example.service.MainHeaderService;
-import org.openqa.selenium.NoSuchElementException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.concurrent.TimeUnit;
-
 
 public class LoginTest extends BaseTest {
 
@@ -23,10 +15,14 @@ public class LoginTest extends BaseTest {
          AdvertisingWindowService advertisingWindowService = new AdvertisingWindowService();
 
          cookieWindowService.cookieClickOk();
+
          advertisingWindowService.waitingForAdvertisement();
+
          mainHeaderService.clickToButtonSignIn();
          loginPageService.enterLogin().enterPassword().clickButtonSignIn();
          mainHeaderService.loginVerification();
+//        Assert.
 
     }
+
 }

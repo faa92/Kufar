@@ -1,9 +1,9 @@
 package org.example.service;
 
+import org.apache.logging.log4j.core.util.JsonUtils;
 import org.example.pages.AdvertisingWindow;
 import org.example.util.DriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,14 +18,21 @@ public class AdvertisingWindowService extends BaseService {
         this.advertisingWindow = new AdvertisingWindow();
     }
 
-    public void waitingForAdvertisement() {
+    public void waitingForAdvertisement() {  //todo
         logger.info("Start wait");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait waitBanner = new WebDriverWait(driver,Duration.ofSeconds(5));
+        WebElement banner = advertisingWindow.getBannerFrame();
+
         try {
-            TimeUnit.SECONDS.sleep(10);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            waitBanner.until(ExpectedConditions.visibilityOf(banner));
+            logger.info("Banner displayed");
+            wait.until(ExpectedConditions.invisibilityOf(banner));
+            driver.switchTo().defaultContent();
+            logger.info("Advertisement disappeared");
+        } catch (TimeoutException e) {
+            logger.info("Banner not found");
         }
-        logger.info("End wait");
     }
 
 }
